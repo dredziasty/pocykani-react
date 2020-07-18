@@ -52,7 +52,7 @@ const App = () => {
               <Switch location={location} key={location.pathname}>
                 {routes.map(({ path, Component }) => (
                   <Route key={path} exact path={path}>
-                    <Component PageTransition={PageTransition} />
+                    <Component />
                   </Route>
                 ))}
               </Switch>
