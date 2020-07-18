@@ -1,0 +1,118 @@
+[
+  {
+    "type": "weddings",
+    "title": "Reportaże ślubne",
+    "photos": [
+      {
+        "src": "https://picsum.photos/id/123/200",
+        "alt": "wedding"
+      },
+      {
+        "src": "https://picsum.photos/id/432/200",
+        "alt": "wedding"
+      },
+      {
+        "src": "https://picsum.photos/id/543/200",
+        "alt": "wedding"
+      },
+      {
+        "src": "https://picsum.photos/id/123/200",
+        "alt": "wedding"
+      },
+      {
+        "src": "https://picsum.photos/id/28/200",
+        "alt": "wedding"
+      },
+      {
+        "src": "https://picsum.photos/id/36/200",
+        "alt": "wedding"
+      },
+      {
+        "src": "https://picsum.photos/id/58/200",
+        "alt": "wedding"
+      },
+      {
+        "src": "https://picsum.photos/id/98/200",
+        "alt": "wedding"
+      },
+      {
+        "src": "https://picsum.photos/id/760/200",
+        "alt": "wedding"
+      }
+    ]
+  },
+  {
+    "type": "parties",
+    "title": "Reportaże z imprez",
+    "photos": [
+      {
+        "src": "https://picsum.photos/id/4/200",
+        "alt": "party"
+      },
+      {
+        "src": "https://picsum.photos/id/1/200",
+        "alt": "party"
+      },
+      {
+        "src": "https://picsum.photos/id/95/200",
+        "alt": "party"
+      },
+      {
+        "src": "https://picsum.photos/id/195/200",
+        "alt": "party"
+      },
+      {
+        "src": "https://picsum.photos/id/927/200",
+        "alt": "party"
+      }
+    ]
+  },
+  {
+    "type": "couple-photoshoots",
+    "title": "Sesje zdjęciowe - pary",
+    "photos": [
+      {
+        "src": "https://picsum.photos/id/55/200",
+        "alt": "couple photoshoot"
+      },
+      {
+        "src": "https://picsum.photos/id/63/200",
+        "alt": "couple photoshoot"
+      },
+      {
+        "src": "https://picsum.photos/id/77/200",
+        "alt": "couple photoshoot"
+      }
+    ]
+  },
+  {
+    "type": "sigle-photoshoots",
+    "title": "Sesje zdjęciowe - solo",
+    "photos": [
+      {
+        "src": "https://picsum.photos/id/443/200",
+        "alt": "single photoshoot"
+      },
+      {
+        "src": "https://picsum.photos/id/234/200",
+        "alt": "single photoshoot"
+      },
+      {
+        "src": "https://picsum.photos/id/653/200",
+        "alt": "single photoshoot"
+      },
+      {
+        "src": "https://picsum.photos/id/72/200",
+        "alt": "single photoshoot"
+      },
+      {
+        "src": "https://picsum.photos/id/6/200",
+        "alt": "single photoshoot"
+      },
+      {
+        "src": "https://picsum.photos/id/443/200",
+        "alt": "single photoshoot"
+      }
+    ]
+  }
+]

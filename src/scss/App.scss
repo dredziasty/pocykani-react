@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Anton&family=Dancing+Script&family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Anton&family=Dancing+Script&family=Raleway&display=swap");
 
 @import "_variables.scss", "_breakpoints.scss";
 
@@ -27,11 +27,6 @@ body {
   background-color: $color2;
 }
 
-@import
-  "./components/page-transition.scss",
-  "./components/header.scss",
-  "./pages/home.scss",
-  "./pages/about.scss",
-  "./pages/portfolio.scss",
-  "./pages/offer.scss",
-  "./pages/contact.scss";
+@import "./components/page-transition.scss", "./components/header.scss",
+  "./pages/home.scss", "./pages/portfolio.scss", "./pages/about.scss",
+  "./pages/offer.scss", "./pages/contact.scss";

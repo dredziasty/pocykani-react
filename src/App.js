@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
-import PageTransition from "./components/PageTransition";
 import Header from "./components/Header";
 
 import Home from "./pages/Home";
