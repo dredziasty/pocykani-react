@@ -12,7 +12,6 @@ const About = () => {
         </header>
         <section className="about-content">
           <p className="text">
-            {" "}
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
             nostrum quae repellat culpa velit eius! Beatae excepturi, at numquam
             assumenda optio nemo maxime nobis nihil? Repellat iure omnis

@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
-import { gsap, Power1, Power2 } from "gsap";
+import { gsap, Power1, Power2, ScrollToPlugin } from "gsap/all";
 
 import PageTransition from "../components/PageTransition";
 
 import portfolioData from "../json/PortfolioData";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const Portfolio = () => {
   let buttons = useRef([
@@ -26,6 +28,11 @@ const Portfolio = () => {
       opacity: 1,
       y: -20,
       stagger: 0.1,
+      ease: Power2.easeInOut,
+    });
+    gsap.to(window, 0.3, {
+      scrollTo: { y: element.previousSibling, offsetY: 20 },
+      delay: 0.4,
       ease: Power2.easeInOut,
     });
   }
@@ -81,7 +88,7 @@ const Portfolio = () => {
         </div>
         {portfolioData.map(({ type, title, photos }, index) => (
           <section key={index} className={`portfolio-section ${type}`}>
-            <header className="ps-header">
+            <header className="ps-header" id={type}>
               <button
                 onClick={() => sectionAnimation(index)}
                 ref={buttons.current[index]}
