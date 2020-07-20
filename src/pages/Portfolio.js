@@ -24,8 +24,6 @@ const Portfolio = () => {
     React.createRef(),
     React.createRef(),
   ]);
-  
-  console.log(portfolioData)
 
   function openAnimation(element) {
     gsap.to(element, 0.4, { height: "auto", ease: Power1.easeInOut });
