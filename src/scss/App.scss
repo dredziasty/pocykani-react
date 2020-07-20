@@ -10,7 +10,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+html, body {
   overflow-x: hidden;
   background-color: $color1;
 }
@@ -27,6 +27,6 @@ body {
   background-color: $color2;
 }
 
-@import "./components/page-transition.scss", "./components/header.scss",
+@import "./components/gallery.scss", "./components/page-transition.scss", "./components/header.scss",
   "./pages/home.scss", "./pages/portfolio.scss", "./pages/about.scss",
   "./pages/offer.scss", "./pages/contact.scss";

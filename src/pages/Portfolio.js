@@ -1,14 +1,12 @@
 import React, { useRef } from "react";
 import { gsap, Power1, Power2, ScrollToPlugin } from "gsap/all";
+import { NavLink } from 'react-router-dom'
 
 import PageTransition from "../components/PageTransition";
 
 import portfolioData from "../json/PortfolioData";
 
-// import foto from 
-
 gsap.registerPlugin(ScrollToPlugin);
-
 
 const Portfolio = () => {
   let buttons = useRef([
@@ -89,7 +87,7 @@ const Portfolio = () => {
             </button>
           </div>
         </div>
-        {portfolioData.map(({ type, title, photos, noPhotos }, index) => (
+        {portfolioData.map(({ type, short, title, photos, noPhotos }, index) => (
           <section key={index} className={`portfolio-section ${type}`}>
             <header className="ps-header" id={type}>
               <button
@@ -106,10 +104,11 @@ const Portfolio = () => {
             >
               <div className="ps-container">
                 <p className="ps-warning">{noPhotos}</p>
-                {photos.map(({ src, alt }, index) => (
-                  <div className="ps-photo-wrapper" key={index}>
+                {photos.map(({ id, src, desc, alt }, index) => (
+                  <NavLink to={`/portfolio/${short}/${id}`} className="ps-photo-wrapper" id={id} key={index}>
+                    <span className="ps-description">{desc}</span>
                     <img src={require(`../images/${src}`)} alt={alt} className="ps-photo" />
-                  </div>
+                  </NavLink>
                 ))}
               </div>
             </article>

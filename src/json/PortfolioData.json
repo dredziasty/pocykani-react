@@ -1,12 +1,14 @@
 [
   {
     "type": "weddings",
+    "short": "w",
     "title": "Reportaże ślubne",
     "photos": [],
     "noPhotos": "Brak zdjęć"
   },
   {
     "type": "parties",
+    "short": "p",
     "title": "Reportaże z imprez",
     "photos": [
       {
@@ -25,6 +27,7 @@
   },
   {
     "type": "couple-photoshoots",
+    "short": "cp",
     "title": "Sesje zdjęciowe - pary",
     "photos": [
       {
@@ -43,6 +46,7 @@
   },
   {
     "type": "sigle-photoshoots",
+    "short": "sp",
     "title": "Sesje zdjęciowe - solo",
     "photos": [
       {

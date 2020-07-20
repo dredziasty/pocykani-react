@@ -133,6 +133,7 @@
         padding: 1.25rem;
 
         .ps-warning {
+          padding: 2rem 0 0 0;
           font-family: $font1;
         }
 
@@ -147,11 +148,35 @@
             margin: 1rem;
           }
 
-          img {
+          .ps-description {
+            width: 190px;
+            padding: .2rem 0;
+            position: absolute;
+            z-index: 20;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-family: $font1;
+            font-size: 1.3rem;
+            background-color: $color3;
+            color: $color4;
+
+            @include sm-o {
+              width: 220px;
+            }
+
+            @include xxl {
+              font-size: 1.6rem;
+              width: 290px;
+            }
+          }
+
+          .ps-photo {
+            z-index: 10;
             width: 220px;
             height: 220px;
             object-fit: cover;
-            box-shadow: 0 0 0.37rem 0.06rem rgba($color2, 0.5);
             transition: transform .3s ease-in-out;
             cursor: pointer;
 

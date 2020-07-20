@@ -3,17 +3,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header";
-import dataFetchedPhotos from './components/FetchedPhotos'
 
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Offer from "./pages/Offer";
 import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 
 import "./scss/App.scss";
-
-console.log(dataFetchedPhotos)
 
 const routes = [
   {
@@ -41,6 +39,11 @@ const routes = [
     name: "contact",
     Component: Contact,
   },
+  {
+    path: "/portfolio/:short/:id",
+    name: "gallery",
+    Component: Gallery
+  }
 ];
 
 const App = () => {
@@ -53,9 +56,7 @@ const App = () => {
             <AnimatePresence initial={false} exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
                 {routes.map(({ path, Component }) => (
-                  <Route key={path} exact path={path}>
-                    <Component />
-                  </Route>
+                  <Route key={path} exact path={path} component={Component} />
                 ))}
               </Switch>
             </AnimatePresence>

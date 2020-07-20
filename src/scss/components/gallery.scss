@@ -1,0 +1,122 @@
+.gallery-container {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1009;
+  background-color: $color2;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  button {
+    position: absolute;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .g-close {
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    width: 36px;
+    height: 36px;
+    padding: .4rem;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      height: 36px;
+      width: 3px;
+      background-color: $color4;
+      transition: background-color .1s ease-in-out;
+    }
+
+    &:hover::before, &:hover::after {
+      background-color: $color3;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  .g-button {
+    top: 50%;
+    transform: translateY(-50%);
+    padding: .5rem;
+
+    .g-icon {
+      display: inline-block;
+      border: solid $color4;
+      border-width: 0 4px 4px 0;
+      padding: 1rem;
+      transition: transform .15s ease-in-out;
+
+      &-prev {
+        transform: rotate(135deg);
+
+        &:hover {
+          transform: scale(.9) rotate(135deg);
+        }
+      }
+
+      &-next {
+        transform: rotate(-45deg);
+
+        &:hover {
+          transform: scale(.9) rotate(-45deg);
+        }
+      }
+    }
+
+    &-prev {
+      left: 2%;
+    }
+
+    &-next {
+      right: 2%;
+    }
+  }
+
+  .g-photo-wrapper {
+    height: inherit;
+    width: max-content;
+    padding: 1rem 0 6rem 0;
+    margin: 0 auto;
+
+    .g-photo-holder {
+      height: 100%;
+      padding: 1rem;
+      background-color: $color4;
+    }
+  }
+
+  .g-pagination {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+    .g-dot {
+      margin: 0 .3rem;
+      height: .6rem;
+      width: .6rem;
+      border-radius: 50%;
+      background-color: $color4;
+      transition: background-color .15s;
+      cursor: pointer;
+
+      &-active {
+        background-color: $color3;
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@ const PageTransition = () => {
           clipPath: "circle(150% at 0% 0%)",
         }}
         transition={{
-          duration: 0.6,
+          duration: 0.5,
           ease: [0.5, 0.02, -0.03, 0.9],
         }}
         className="overlay"
