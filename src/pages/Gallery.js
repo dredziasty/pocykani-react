@@ -89,6 +89,9 @@ const Gallery = ({ match }) => {
   return (
     <>
       <PageTransition />
+      {images.map((image, i) => (
+        <img key={i} className="load" src={image}  alt=""/>
+      ))}
       <div className="gallery-container">
         <button
           className="g-close"
