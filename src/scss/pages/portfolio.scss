@@ -132,6 +132,11 @@
         justify-content: center;
         padding: 1.25rem;
 
+        .ps-warning {
+          padding: 1rem;
+          font-family: $font1;
+        }
+
         .ps-photo-wrapper {
           position: relative;
           margin: 0.65rem;
@@ -145,6 +150,7 @@
 
           img {
             width: 220px;
+            height: 220px;
             object-fit: cover;
             box-shadow: 0 0 0.37rem 0.06rem rgba($color2, 0.5);
             transition: transform .3s ease-in-out;
@@ -156,10 +162,12 @@
 
             @include sm-o {
               width: 250px;
+              height: 250px;
             }
 
             @include xxl {
-              width: 340px;
+              width: 320px;
+              height: 320px;
             }
           }
         }

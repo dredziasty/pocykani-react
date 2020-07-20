@@ -5,7 +5,10 @@ import PageTransition from "../components/PageTransition";
 
 import portfolioData from "../json/PortfolioData";
 
+// import foto from 
+
 gsap.registerPlugin(ScrollToPlugin);
+
 
 const Portfolio = () => {
   let buttons = useRef([
@@ -14,13 +17,15 @@ const Portfolio = () => {
     React.createRef(),
     React.createRef(),
   ]);
-
+  
   let contents = useRef([
     React.createRef(),
     React.createRef(),
     React.createRef(),
     React.createRef(),
   ]);
+  
+  console.log(portfolioData)
 
   function openAnimation(element) {
     gsap.to(element, 0.4, { height: "auto", ease: Power1.easeInOut });
@@ -86,7 +91,7 @@ const Portfolio = () => {
             </button>
           </div>
         </div>
-        {portfolioData.map(({ type, title, photos }, index) => (
+        {portfolioData.map(({ type, title, photos, noPhotos }, index) => (
           <section key={index} className={`portfolio-section ${type}`}>
             <header className="ps-header" id={type}>
               <button
@@ -102,9 +107,10 @@ const Portfolio = () => {
               ref={contents.current[index]}
             >
               <div className="ps-container">
+                <p className="ps-warning">{noPhotos}</p>
                 {photos.map(({ src, alt }, index) => (
                   <div className="ps-photo-wrapper" key={index}>
-                    <img src={src} alt={alt} className="ps-photo" />
+                    <img src={require(`../images/${src}`)} alt={alt} className="ps-photo" />
                   </div>
                 ))}
               </div>

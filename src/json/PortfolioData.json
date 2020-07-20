@@ -2,67 +2,23 @@
   {
     "type": "weddings",
     "title": "Reportaże ślubne",
-    "photos": [
-      {
-        "src": "https://picsum.photos/id/123/200",
-        "alt": "wedding"
-      },
-      {
-        "src": "https://picsum.photos/id/432/200",
-        "alt": "wedding"
-      },
-      {
-        "src": "https://picsum.photos/id/543/200",
-        "alt": "wedding"
-      },
-      {
-        "src": "https://picsum.photos/id/123/200",
-        "alt": "wedding"
-      },
-      {
-        "src": "https://picsum.photos/id/28/200",
-        "alt": "wedding"
-      },
-      {
-        "src": "https://picsum.photos/id/36/200",
-        "alt": "wedding"
-      },
-      {
-        "src": "https://picsum.photos/id/58/200",
-        "alt": "wedding"
-      },
-      {
-        "src": "https://picsum.photos/id/98/200",
-        "alt": "wedding"
-      },
-      {
-        "src": "https://picsum.photos/id/760/200",
-        "alt": "wedding"
-      }
-    ]
+    "photos": [],
+    "noPhotos": "Brak zdjęć"
   },
   {
     "type": "parties",
     "title": "Reportaże z imprez",
     "photos": [
       {
-        "src": "https://picsum.photos/id/4/200",
+        "id": "1595245024571",
+        "src": "previews/p/1595245024571.jpg",
+        "desc": "18nastka Ola",
         "alt": "party"
       },
       {
-        "src": "https://picsum.photos/id/1/200",
-        "alt": "party"
-      },
-      {
-        "src": "https://picsum.photos/id/95/200",
-        "alt": "party"
-      },
-      {
-        "src": "https://picsum.photos/id/195/200",
-        "alt": "party"
-      },
-      {
-        "src": "https://picsum.photos/id/927/200",
+        "id": "1595245190880",
+        "src": "previews/p/1595245190880.jpg",
+        "desc": "18nastka Żaneta",
         "alt": "party"
       }
     ]
@@ -72,15 +28,15 @@
     "title": "Sesje zdjęciowe - pary",
     "photos": [
       {
-        "src": "https://picsum.photos/id/55/200",
+        "id": "1595245247086",
+        "src": "previews/cp/1595245247086.jpg",
+        "desc": "Amelia i Miłosz",
         "alt": "couple photoshoot"
       },
       {
-        "src": "https://picsum.photos/id/63/200",
-        "alt": "couple photoshoot"
-      },
-      {
-        "src": "https://picsum.photos/id/77/200",
+        "id": "1595245291439",
+        "src": "previews/cp/1595245291439.jpg",
+        "desc": "Iza i Rafał",
         "alt": "couple photoshoot"
       }
     ]
@@ -90,27 +46,27 @@
     "title": "Sesje zdjęciowe - solo",
     "photos": [
       {
-        "src": "https://picsum.photos/id/443/200",
+        "id": "1595246138675",
+        "src": "previews/sp/1595246138675.jpg",
+        "desc": "Agnieszka",
         "alt": "single photoshoot"
       },
       {
-        "src": "https://picsum.photos/id/234/200",
+        "id": "1595246302066",
+        "src": "previews/sp/1595246302066.jpg",
+        "desc": "Szymon",
         "alt": "single photoshoot"
       },
       {
-        "src": "https://picsum.photos/id/653/200",
+        "id": "1595246385189",
+        "src": "previews/sp/1595246385189.jpg",
+        "desc": "Paulina",
         "alt": "single photoshoot"
       },
       {
-        "src": "https://picsum.photos/id/72/200",
-        "alt": "single photoshoot"
-      },
-      {
-        "src": "https://picsum.photos/id/6/200",
-        "alt": "single photoshoot"
-      },
-      {
-        "src": "https://picsum.photos/id/443/200",
+        "id": "1595246433597",
+        "src": "previews/sp/1595246433597.jpg",
+        "desc": "Kuba",
         "alt": "single photoshoot"
       }
     ]
