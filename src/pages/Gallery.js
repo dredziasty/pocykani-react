@@ -20,15 +20,15 @@ const Gallery = ({ match }) => {
   const images = loadedPhotos(short, id);
 
   const fadeOutInPrev = () => {
-    gsap.to(".g-photo-wrapper", 0.15, { opacity: 0, x: -15 });
-    gsap.set(".g-photo-wrapper", { x: 0, delay: 0.2 });
-    gsap.to(".g-photo-wrapper", 0.15, { opacity: 1, delay: 0.3 });
+    gsap.to(".g-photo-holder", 0.15, { opacity: 0, x: -15 });
+    gsap.set(".g-photo-holder", { x: 0, delay: 0.2 });
+    gsap.to(".g-photo-holder", 0.15, { opacity: 1, delay: 0.3 });
   };
 
   const fadeOutInNext = () => {
-    gsap.to(".g-photo-wrapper", 0.15, { opacity: 0, x: 15 });
-    gsap.set(".g-photo-wrapper", { x: 0, delay: 0.2 });
-    gsap.to(".g-photo-wrapper", 0.15, { opacity: 1, delay: 0.3 });
+    gsap.to(".g-photo-holder", 0.15, { opacity: 0, x: 15 });
+    gsap.set(".g-photo-holder", { x: 0, delay: 0.2 });
+    gsap.to(".g-photo-holder", 0.15, { opacity: 1, delay: 0.3 });
   };
 
   const prev = () => {
@@ -90,19 +90,23 @@ const Gallery = ({ match }) => {
     <>
       <PageTransition />
       {images.map((image, i) => (
-        <img key={i} className="load" src={image}  alt=""/>
+        <img key={i} className="load" src={image} alt="" />
       ))}
       <div className="gallery-container">
-        <button
-          className="g-close"
-          onClick={() => history.push("/portfolio")}
-        />
+        {/* <div className="g-controllers-container"> */}
+        <button className="g-close" onClick={() => history.push("/portfolio")}>
+          <span className="g-close-line"></span>
+          <span className="g-close-line"></span>
+        </button>
+        {/* </div> */}
+        {/* <div className="g-photo-container"> */}
+        <div className="g-photo-wrapper">
+          <img className="g-photo-holder" src={images[index]} alt="" />{" "}
+        </div>
+        {/* </div> */}
         <button ref={prevBtn} className="g-button-prev g-button" onClick={prev}>
           <i className="g-icon-prev g-icon"></i>
         </button>
-        <div className="g-photo-wrapper">
-          <img className="g-photo-holder" src={images[index]} alt="" />
-        </div>
         <button ref={nextBtn} className="g-button-next g-button" onClick={next}>
           <i className="g-icon-next g-icon"></i>
         </button>

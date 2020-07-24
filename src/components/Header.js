@@ -33,13 +33,13 @@ const Header = () => {
   const tlHeader = gsap.timeline()
 
   const burgerOpen = () => {
-    gsap.set('body', { overflow: 'hidden' })
+    gsap.set('html', { overflow: 'hidden' })
     gsap.set('.nav-mobile', { display: 'grid' })
     gsap.to('.header-wrapper', .4, { height: '100vh', backgroundColor: 'rgba(215, 215, 215, .9)', ease: Power3.easeInOut })
     gsap.to('.nav-mobile .link', .3, { opacity: 1, x: 0, delay: .15, stagger: .1, ease: Power1.easeInOut })
-    gsap.to('.line-2', .2, { opacity: 0, delay: .1 })
     gsap.to('.line-1', .2, { y: 10, delay: .1 })
     gsap.to('.line-3', .2, { y: -10, delay: .1 })
+    gsap.to('.line-2', .2, { opacity: 0, delay: .1 })
     gsap.to('.line-1', .2, { rotation: 45, delay: .2 })
     gsap.to('.line-3', .2, { rotation: -45, delay: .2 })
   }
@@ -49,7 +49,7 @@ const Header = () => {
     gsap.to(['.line-1', '.line-3'], .2, { rotation: 0 })
     gsap.to(['.line-1', '.line-3'], .2, { y: 0, delay: .1 })
     gsap.to('.line-2', .2, { opacity: 1, delay: .1 })
-    gsap.set('body', { overflow: 'auto' })
+    gsap.set('html', { overflow: 'auto' })
     gsap.set('.nav-mobile', { display: 'none', delay: .3 }) 
     gsap.set('.nav-mobile .link', { opacity: 0, x: -20, delay: .3 })
   }
