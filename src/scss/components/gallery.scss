@@ -9,10 +9,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 10% 64% 18% 8%;
+  overflow-x: hidden;
 
+  @include sm-o {
+    grid-template-columns: 14% 1fr 14%;
+    grid-template-rows: 1rem 10% 1rem calc(82% - 3rem) 1rem 8%;
+  }
+  
   @include lg {
     grid-template-columns: 12% 1fr 12%;
-    grid-template-rows: 1rem 10% 1rem calc(82% - 3rem) 1rem 8%;
   }
 
   @include xl {
@@ -34,15 +39,24 @@
     top: 0;
     right: 0;
     margin: 0 1rem 0 0;
-    width: calc(36px + 0.8rem);
+    width: calc(32px + 0.8rem);
     height: calc(28px + 0.8rem);
     padding: 0.4rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 
-    @include lg {
+    @include sm-o {
       grid-area: 1 / 3 / 3 / 4;
+      margin: 0 .5rem 0 0;
+    }
+
+    @include md {
+      margin: 0 1rem 0 0;
+      width: calc(37px + 0.8rem);
+    }
+
+    @include lg {
       margin: 1.5rem 1.5rem 0 0;
       align-self: start;
     }
@@ -54,10 +68,14 @@
     &-line {
       display: block;
       height: 3px;
-      width: 37px;
+      width: 32px;
       background-color: $color4;
       transform-origin: 50% 50%;
       transition: background-color 0.1s ease-in-out;
+
+      @include md {
+        width: 37px;
+      }
 
       &:first-child {
         transform: translateY(12.5px) rotate(45deg);
@@ -74,7 +92,7 @@
     padding: .7rem;
     background-color: $color5;
 
-    @include lg {
+    @include sm-o {
       grid-area: 2 / 2 / 6 / 3;
     }
 
@@ -104,8 +122,12 @@
       display: inline-block;
       border: solid $color4;
       border-width: 0 4px 4px 0;
-      padding: 0.8rem;
+      padding: 0.72rem;
       transition: 0.15s ease-in-out;
+
+      @include md {
+        padding: 0.85rem;
+      }
 
       &-prev {
         transform: rotate(135deg);
@@ -119,7 +141,7 @@
     &-prev {
       margin: 0 1rem 0 0;
 
-      @include lg {
+      @include sm-o {
         grid-area: 4 / 1 / 5 / 2;
         margin: 0;
       }
@@ -132,7 +154,7 @@
     &-next {
       margin: 0 0 0 1rem;
 
-      @include lg {
+      @include sm-o {
         grid-area: 4 / 3 / 5 / 4;
         margin: 0;
       }
@@ -151,7 +173,7 @@
     display: flex;
     height: 100%;
 
-    @include lg {
+    @include sm-o {
       grid-area: 6 / 2 / 7 / 3;
     }
 
