@@ -1,32 +1,4 @@
-@mixin sa-horizontal-layout {
-  grid-template-columns: 1fr 52%;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-areas: 
-    "sa-c1 sa-p1"
-    "sa-c1 sa-p1"
-    "sa-c2 sa-p1"
-    "sa-c2 sa-p2"
-    "sa-c3 sa-p2"
-    "sa-c3 sa-p2";
-}
-
-@mixin sa-vertical-layout($image-row, $text-row: 1fr) {
-  grid-template-columns: 1fr;
-  grid-template-rows: 
-    $text-row 
-    $text-row 
-    $image-row 
-    $text-row 
-    $image-row;
-  grid-template-areas: 
-    "sa-c1"
-    "sa-c2"
-    "sa-p1"
-    "sa-c3"
-    "sa-p2";
-}
-
-.home-main {  
+.home-main {
   .hero-wrapper {
     width: 100vw;
     height: 100vh;
@@ -38,135 +10,244 @@
       object-position: 70% 65%;
     }
   }
-  
+
+  .h-photo-wrapper {
+    width: 100vw;
+    height: 100vh;
+
+    .h-photo {
+      width: 100%;
+      height: 90%;
+      object-fit: cover;
+      object-position: 31% 75%;
+
+      @include md {
+        height: 100%;
+      }
+    }
+  }
+
   .short-about {
-    min-height: 100vh;
-    padding: .3rem;
+    padding: 1rem 0.8rem;
     background-color: $color1;
-    display: grid;
-    @include sa-vertical-layout(minmax(160px, 280px), 1fr);
-
-    @include md {
-      @include sa-vertical-layout(minmax(280px, 380px), 1fr);
-    }
-
-    @include lg {
-      @include sa-vertical-layout(minmax(380px, 480px), 1fr);
-    }
+    display: flex;
+    flex-direction: column;
 
     @include xl {
-      height: 100vh;
-      @include sa-horizontal-layout;
+      padding: 2.7rem 5.4rem;
+    }
+
+    @include xxl {
+      padding: 3rem 7rem;
+    }
+
+    .sa-content-1 {
+      align-self: flex-start;
+    }
+
+    .sa-content-2 {
+      align-self: flex-end;
+    }
+
+    .sa-content-3 {
+      align-self: flex-start;
     }
 
     .sa-content {
       color: $color2;
-      padding: 2rem 1rem;
+      width: 90%;
+      padding: 3rem 0;
+
+      @include md {
+        padding: 3rem 0;
+      }
+
+      @include lg {
+        padding: 4rem 0;
+      }
 
       @include xl {
-        padding: 2rem 0 0 2rem;
+        padding: 5.3rem 0;
+        max-width: 60rem;
+      }
+
+      @include xxl {
+        padding: 6.5rem 0;
+        max-width: 64rem;
       }
 
       .sa-header {
-        margin: 0 0 .6rem 0;
+        margin: 0 0 1rem 0;
         font-family: $font4;
         font-weight: 600;
-        font-size: 1.5rem;
-        letter-spacing: .07rem;
+        font-size: 1.9rem;
+        letter-spacing: 0.05rem;
 
-        @include lg {
-          font-size: 1.8rem;
+        @include md {
+          font-size: 2.7rem;
+          margin: 0 0 1rem 0;
         }
 
         @include xl {
-          font-size: 2.2rem;
+          font-size: 3.8rem;
+          margin: 0 0 2rem 0;
+        }
+
+        @include xxl {
+          font-size: 4.5rem;
+          margin: 0 0 2.8rem 0;
+        }
+
+        span {
+          background-color: $color2;
+          color: $color1;
+          padding: 0.1rem 0.35rem;
         }
       }
 
       .sa-text {
         font-family: $font1;
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         line-height: 1.6rem;
-        padding: 0 0 .6rem .6rem;
+        padding: 0 0 0 1rem;
         position: relative;
+        z-index: 1;
 
-        @include lg {
-          font-size: 1.3rem;
-          line-height: 1.75rem;
+        @include md {
+          padding: 0 0 0 1.5rem;
+          font-size: 1.35rem;
+          line-height: 2rem;
+          letter-spacing: 0.03rem;
         }
 
         @include xl {
-          max-width: 600px;
-          padding: 0 0 1.2rem 1.5rem;
-          font-size: 1.45rem;
+          padding: 0 0 0 5rem;
+          font-size: 1.65rem;
+          line-height: 2.4rem;
+          letter-spacing: 0.05rem;
+        }
+
+        @include xxl {
+          padding: 0 0 0 5rem;
+          font-size: 1.8rem;
+          line-height: 2.7rem;
         }
 
         &::before {
-          content: '';
           position: absolute;
-          width: 290px;
-          height: 2px;
-          left: 0;
-          bottom: 0;
-          background: linear-gradient(to right, $color3, $color1);
+          content: "";
+          height: 2.4rem;
+          width: 100%;
+          background-color: $color4;
+          bottom: -0.2rem;
+          left: 0.5rem;
+          z-index: -1;
+
+          @include xl {
+            height: 3.7rem;
+          }
+
+          @include xxl {
+            height: 4.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .h-nav {
+    overflow: hidden;
+    // height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
+
+    @include sm-o {
+      padding: 2rem 0;
+    }
+
+    @include md-o {
+      padding: 7.5rem 0 4rem 0;
+    }
+
+    @include lg {
+      padding: 7.5rem 0 4rem 0;
+    }
+
+    @include xl {
+      padding: 10rem 0 4rem 0;
+    }
+
+    &-portfolio {
+      display: flex;
+      flex-direction: column;
+      background-color: $color4;
+      padding: 2rem 1rem;
+      margin: 0 0 10rem 0;
+
+      @include sm-o {
+        padding: 2rem 3rem;
+        margin: 0 0 8rem 0;
+      }
+
+      @include md-o {
+        padding: 3rem 4.5rem;
+        margin: 0 0 12rem 0;
+      }
+
+      @include lg {
+        padding: 4rem 6rem;
+        margin: 0 0 14rem 0;
+      }
+
+      @include xl {
+        padding: 5rem 7.5rem;
+        margin: 0 0 17rem 0;
+      }
+
+      a { 
+        font-size: 1.8rem;
+        font-family: $font4;
+        text-decoration: none;
+        color: $color2;
+        padding: 0.5rem 0.9rem;
+        transition: 0.2s color ease-in-out, 0.2s background-color ease-in-out;
+        border: 0.2rem solid $color3;
+        text-align: center;
+
+        @include lg {
+          font-size: 2.7rem;
+        } 
+
+        @include xl {
+          font-size: 3.3rem;
+        }
+
+        &:hover {
+          background-color: $color3;
+          color: $color1;
         }
       }
     }
 
-    .sa-content-1 {
-      grid-area: sa-c1;
-    }
+    &-scroll {
+      font-style: italic;
+      outline: none;
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      color: $color1;
+      background-color: $color2;
+      padding: 0.5rem;
+      font-size: 1.05rem;
+      letter-spacing: 0.03rem;
+      font-family: $font1;
+      transition: transform ease-in-out .2s;
 
-    .sa-content-2 {
-      grid-area: sa-c2;
-    }
-
-    .sa-content-3 {
-      grid-area: sa-c3;
-    }
-
-    .sa-photo-wrapper {
-      padding: 1rem;
-
-      .sa-photo {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 8px;
-        padding: .63rem;
-        background: $color4;
-      }
-
-      @include sm {
-        padding: 1rem 3rem;
-      }
-
-      @include md {
-        padding: 1rem 3rem;
-      }
-
-      @include lg {
-        padding: 1rem 4rem;
-      }
-
-      @include xl {
-        padding: 1rem 1.5rem;
-      }
-    }
-
-    .sa-photo-wrapper-1 {
-      grid-area: sa-p1;
-
-      .sa-photo-1 {
-        object-position: 20% 80%;
-      }
-    }
-
-    .sa-photo-wrapper-2 {
-      grid-area: sa-p2;
-
-      .sa-photo-2 {
-        object-position: 50% 40%;
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }

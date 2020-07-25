@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color4;
+
+  .f-info {
+    margin: 2rem;
+    font-family: $font1;
+    font-size: 1.1rem;
+  }
+}
