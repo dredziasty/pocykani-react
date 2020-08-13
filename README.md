@@ -1,1 +1,1 @@
-The website is available at http://www.pocykani.herokuapp.com
+The website is available at http://pocykani.herokuapp.com
