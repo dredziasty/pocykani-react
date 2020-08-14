@@ -9,7 +9,7 @@ import loadedPhotos from "../components/LoadedPhotos";
 const Gallery = ({ match }) => {
   const history = useHistory();
 
-  const [index, setIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [lastIndex, setLastIndex] = useState(0);
 
   let prevBtn = useRef(null);
@@ -32,16 +32,16 @@ const Gallery = ({ match }) => {
   };
 
   const prev = () => {
-    let _index = index;
+    let _index = currentIndex;
     let _prev = prevBtn.current;
     setLastIndex(_index);
     if (!_prev.hasAttribute("disabled")) {
       fadeOutInPrev();
       setTimeout(() => {
         if (_index === 0) {
-          setIndex(images.length - 1);
+          setCurrentIndex(images.length - 1);
         } else {
-          setIndex(--_index);
+          setCurrentIndex(--_index);
         }
       }, 200);
       _prev.setAttribute("disabled", "");
@@ -50,16 +50,16 @@ const Gallery = ({ match }) => {
   };
 
   const next = () => {
-    let _index = index;
+    let _index = currentIndex;
     let _next = nextBtn.current;
     setLastIndex(_index);
     if (!_next.hasAttribute("disabled")) {
       fadeOutInNext();
       setTimeout(() => {
         if (_index === images.length - 1) {
-          setIndex(0);
+          setCurrentIndex(0);
         } else {
-          setIndex(++_index);
+          setCurrentIndex(++_index);
         }
       }, 200);
       _next.setAttribute("disabled", "");
@@ -68,42 +68,42 @@ const Gallery = ({ match }) => {
   };
 
   const pagination = (_index) => {
-    if (_index != index) {
-      if (_index > index) {
+    if (_index != currentIndex) {
+      if (_index > currentIndex) {
         fadeOutInNext();
       } else {
         fadeOutInPrev();
       }
-      setLastIndex(index);
+      setLastIndex(currentIndex);
       setTimeout(() => {
-        setIndex(_index);
+        setCurrentIndex(_index);
       }, 200);
     }
   };
 
   useEffect(() => {
     dots.current[lastIndex].classList.remove("g-dot-active");
-    dots.current[index].classList.add("g-dot-active");
-  }, [index]);
+    dots.current[currentIndex].classList.add("g-dot-active");
+  }, [currentIndex]);
 
   return (
     <>
       <PageTransition />
-      {images.map((image, i) => (
-        <img key={i} className="load" src={image} alt="" />
-      ))}
       <div className="gallery-container">
-        {/* <div className="g-controllers-container"> */}
         <button className="g-close" onClick={() => history.push("/portfolio")}>
           <span className="g-close-line"></span>
           <span className="g-close-line"></span>
         </button>
-        {/* </div> */}
-        {/* <div className="g-photo-container"> */}
         <div className="g-photo-wrapper">
-          <img className="g-photo-holder" src={images[index]} alt="" />{" "}
+          {images.map((image, index) => (
+            <img
+              src={image}
+              alt=""
+              className="g-photo-holder"
+              style={{ display: index !== currentIndex ? "none" : "block" }}
+            />
+          ))}
         </div>
-        {/* </div> */}
         <button ref={prevBtn} className="g-button-prev g-button" onClick={prev}>
           <i className="g-icon-prev g-icon"></i>
         </button>

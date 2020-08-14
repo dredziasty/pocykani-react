@@ -1,13 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import ProgressiveImage from "react-progressive-graceful-image";
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { gsap, ScrollToPlugin, Power1 } from "gsap/all";
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 import PageTransition from "../components/PageTransition";
 
+import heroPhotoTiny from '../images/f4-t.jpg'
 import heroPhoto from "../images/f4.jpg";
-import photo1 from "../images/f1.jpg";
-import photo2 from "../images/f5.jpg";
+import photoTiny from '../images/f1-t.jpg'
+import photo from "../images/f1.jpg";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -21,7 +24,7 @@ const Home = () => {
       <PageTransition />
       <main className="home-main">
         <div className="hero-wrapper">
-          <img src={heroPhoto} alt="hero" className="hero" />
+          <img src={heroPhoto} alt="hero" className="hero"/>
         </div>
         <section className="short-about">
           <article className="sa-content sa-content-1">
@@ -52,7 +55,7 @@ const Home = () => {
           </article>
         </section>
         <div className="h-photo-wrapper h-photo-wrapper-1">
-          <img src={photo1} alt="home" className="h-photo h-photo-1" />
+          <img src={photo} alt="home" className="h-photo h-photo-1" />
         </div>
         <div className="h-nav">
           <div className="h-nav-portfolio">
