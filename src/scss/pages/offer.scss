@@ -1,6 +1,137 @@
-.offer-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200vh;
+.offer {
+  min-height: calc(100vh - 245px);
+  margin: 120px 0 40px 0;
+  color: $color2;
+
+  &__header {
+    padding: 1.8rem 0 2rem 2rem;
+
+    @include lg {
+      padding: 1.8rem 0 2rem 4rem;
+    }
+
+    @include xxl {
+      padding: 1.8rem 0 2rem 8rem;
+    }
+  }
+
+  &__header-text {
+    font-family: $font4;
+    font-weight: 600;
+    font-size: 2.6rem;
+
+    @include lg {
+      font-size: 3.2rem;
+    }
+  }
+  
+  &__info {
+    background-color: $color4;
+    border-left: 0.25rem solid $color3;
+    margin: 0 0 2rem 1rem;
+    padding: 2rem 1rem;
+    max-width: 1440px;
+
+    @include lg {
+      padding: 2rem 2.5rem 2rem 5rem;
+    }
+
+    @include xxl {
+      margin: 0 0 3rem 3rem;
+    }
+  }
+
+  &__info-header {
+    font-size: 1.7rem;
+    font-family: $font4;
+
+    @include lg {
+      font-size: 2.1rem;
+    }
+  }
+
+  &__description,
+  &__price {
+    font-family: $font1;
+  }
+
+  &__description {
+    line-height: 1.6rem;
+    text-indent: 1rem;
+    padding: 1.5rem 1rem;
+
+    @include lg {
+      font-size: 1.1rem;
+      line-height: 1.8rem;
+    }
+  }
+
+  &__price {
+    width: max-content;
+    padding: 0.3rem 0.6rem;
+    margin: 0 0 0.7rem 0.4rem;
+    background-color: $color3;
+    color: $color4;
+  }
+
+  &__nav {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0 2rem 0;
+
+    @include sm-o {
+      padding: 4rem 0 2rem 0;
+    }
+
+    @include md-o {
+      padding: 4rem 0 2rem 0;
+    }
+
+    @include lg {
+      padding: 6rem 0 4rem 0;
+    }
+
+    @include xl {
+      padding: 6rem 0 4rem 0;
+    }
+  }
+
+  &__link-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: $color4;
+    padding: 2rem;
+    margin: 0 0 5rem 0;
+
+    @include lg {
+      padding: 3rem;
+    }
+  }
+
+  &__link {
+    font-size: 1.8rem;
+    font-family: $font4;
+    text-decoration: none;
+    color: $color2;
+    padding: 0.5rem 0.9rem;
+    transition: 0.2s color ease-in-out, 0.2s background-color ease-in-out;
+    border: 0.2rem solid $color3;
+    text-align: center;
+
+    @include lg {
+      font-size: 2.7rem;
+    } 
+
+    @include xl {
+      font-size: 3.1rem;
+    }
+
+    &:hover {
+      background-color: $color3;
+      color: $color1;
+    }
+  }
 }

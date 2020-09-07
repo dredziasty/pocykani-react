@@ -1,150 +1,150 @@
-.portfolio-main {
-  min-height: 80vh;
+.portfolio {
+  min-height: calc(100vh - 265px);
   margin: 8.2rem 0 3rem 0;
   display: flex;
   flex-direction: column;
   background-color: $color1;
 
-  .portfolio-section {
+  &__section {
     margin: 0 0 0.6rem 0;
+  }
 
-    .ps-header {
-      transition: all 0.3s ease-in-out;
-      transform-origin: left bottom;
-      margin: 0.6rem 0 1.25rem 1.25rem;
-      width: max-content;
+  &__section-header {
+    transition: all 0.3s ease-in-out;
+    transform-origin: left bottom;
+    margin: 0.6rem 0 1.25rem 1.25rem;
+    width: max-content;
 
-      @include md {
-        margin: 1.25rem 0 1.25rem 3.1rem;
-      }
-
-      @include xl {
-        margin: 1.25rem 0 1.25rem 5rem;
-      }
-
-      @include xxl {
-        margin: 1.25rem 0 1.25rem 6.25rem;
-      }
-
-      &:hover {
-        letter-spacing: 0.1rem;
-        transform: skewX(-25deg);
-      }
-
-      button {
-        color: $color2;
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
-        appearance: none;
-        outline: none;
-        font-size: 1.6rem;
-        font-family: $font4;
-
-        @include sm {
-          font-size: 1.8rem;
-        }
-
-        @include md {
-          font-size: 2.4rem;
-        }
-
-        @include lg {
-          font-size: 2.7rem;
-        }
-
-        @include xl {
-          font-size: 3rem;
-        }
-
-        @include xxl {
-          font-size: 3.4rem;
-        }
-      }
+    @include md {
+      margin: 1.25rem 0 1.25rem 3.1rem;
     }
 
-    .ps-content {
-      background-color: $color4;
-      margin: 0.6rem 0.6rem 0 0.6rem;
-      height: 0;
-      overflow: hidden;
-      border-left: 0.25rem solid $color3;
+    @include xl {
+      margin: 1.25rem 0 1.25rem 5rem;
+    }
 
-      @include xxl {
-        margin: 0.6rem 3.75rem 0 3.75rem;
-      }
+    @include xxl {
+      margin: 1.25rem 0 1.25rem 6.25rem;
+    }
 
-      .ps-container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        padding: 1.25rem;
+    &:hover {
+      letter-spacing: 0.1rem;
+      transform: skewX(-25deg);
+    }
+  }
 
-        .ps-warning {
-          padding: 2rem 0 0 0;
-          font-family: $font1;
-        }
+  &__button {
+    color: $color2;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    appearance: none;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: $font4;
 
-        .ps-photo-wrapper {
-          position: relative;
-          margin: 0.65rem;
-          top: 1.25rem;
-          opacity: 0;
-          overflow: hidden;
+    @include sm {
+      font-size: 1.8rem;
+    }
 
-          @include xl {
-            margin: 1rem;
-          }
+    @include md {
+      font-size: 2.4rem;
+    }
 
-          .ps-description {
-            width: 190px;
-            padding: .2rem 0;
-            position: absolute;
-            z-index: 20;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            font-family: $font1;
-            font-size: 1.3rem;
-            background-color: $color3;
-            color: $color4;
+    @include lg {
+      font-size: 2.7rem;
+    }
 
-            @include sm-o {
-              width: 220px;
-            }
+    @include xl {
+      font-size: 3rem;
+    }
 
-            @include xxl {
-              font-size: 1.6rem;
-              width: 290px;
-            }
-          }
+    @include xxl {
+      font-size: 3.4rem;
+    }
+  }
 
-          .ps-photo {
-            z-index: 10;
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            transition: transform .3s ease-in-out;
-            cursor: pointer;
+  &__section-content {
+    background-color: $color4;
+    margin: 0.6rem 0.6rem 0 0.6rem;
+    height: 0;
+    overflow: hidden;
+    border-left: 0.25rem solid $color3;
 
-            &:hover, &:focus {
-              transform: scale(1.15);
-            }
+    @include xxl {
+      margin: 0.6rem 3.75rem 0 3.75rem;
+    }
+  }
 
-            @include sm-o {
-              width: 250px;
-              height: 250px;
-            }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+  }
 
-            @include xxl {
-              width: 320px;
-              height: 320px;
-            }
-          }
-        }
-      }
+  &__warning {
+    padding: 2rem 0 0 0;
+    font-family: $font1;
+  }
+
+  &__photo-wrapper {
+    position: relative;
+    margin: 0.65rem;
+    top: 1.25rem;
+    opacity: 0;
+    overflow: hidden;
+
+    @include xl {
+      margin: 1rem;
+    }
+  }
+
+  &__description {
+    width: 190px;
+    padding: .2rem 0;
+    position: absolute;
+    z-index: 20;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: $font1;
+    font-size: 1.3rem;
+    background-color: $color3;
+    color: $color4;
+
+    @include sm-o {
+      width: 220px;
+    }
+
+    @include xxl {
+      font-size: 1.6rem;
+      width: 290px;
+    }
+  }
+
+  &__photo {
+    z-index: 10;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    transition: transform .3s ease-in-out;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      transform: scale(1.15);
+    }
+
+    @include sm-o {
+      width: 250px;
+      height: 250px;
+    }
+
+    @include xxl {
+      width: 320px;
+      height: 320px;
     }
   }
 }

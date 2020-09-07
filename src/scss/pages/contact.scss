@@ -1,6 +1,206 @@
-.contact-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.contact {
+  min-height: calc(100vh - 245px);
+  margin: 120px 0 40px 0;
+  color: $color2;
+
+  &__header {
+    padding: 1.8rem 0 2rem 2rem;
+
+    @include lg {
+      padding: 1.8rem 0 2rem 4rem;
+    }
+
+    @include xxl {
+      padding: 1.8rem 0 2rem 8rem;
+    }
+  }
+
+   &__header-text {
+    font-family: $font4;
+    font-weight: 600;
+    font-size: 2.6rem;
+
+    @include lg {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__form {
+    margin: 0 0 0 1rem;
+    background-color: $color4;
+    padding: 2rem;
+    border-left: 0.25rem $color3 solid;
+  }
+
+  &__header-form-wrapper {
+    width: max-content;
+    font-family: $font4;
+    font-size: 1.6rem;
+    margin: 0 0 2rem 0;
+    padding: 0.2rem 0.5rem;
+    color: $color4;
+    background-color: $color2;
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-family: $font4;
+    margin: 0 0 0.4rem 0;
+  }
+
+  &__input {
+    font-family: $font1;
+    padding: 0.2rem;
+    font-size: 1rem;
+    outline-color: $color3;
+    border: solid 1px $color2;
+
+    &:hover {
+      border: solid 1px $color3;
+    }
+  }
+
+  &__select {
+    padding: calc(0.2rem - 1px);
+  }
+
+  &__button {
+    font-size: 1.2rem;
+    font-family: $font4;
+    letter-spacing: 0.1rem;
+    width: max-content;
+    align-self: flex-end;
+    background-color: $color4;
+    border: 2px solid $color3;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    cursor: pointer;
+    padding: 0.6rem 2rem;
+    
+    @include lg {
+      padding: 0.8rem 3rem;
+    }
+
+    &:hover {
+      color: $color4;
+      background-color: $color3;
+    }
+  }
+
+  &__social-media {
+    margin: 0 0 0 2rem;
+    @include xl {
+      margin: 0 0 0 5rem;
+    }
+  }
+
+  &__header-social-wrapper {
+    width: max-content;
+    font-family: $font4;
+    font-size: 1.6rem;
+    margin: 2rem 0;
+    position: relative;
+    z-index: 1;
+    padding: 0.2rem 0.5rem;
+    color: $color4;
+    background-color: $color3;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color2;
+    margin: 6rem 0 5rem 0;
+    display: block;
+    width: max-content;
+    overflow: hidden;
+  }
+
+  &__social-icon {
+    width: 1.5rem;
+  }
+
+  &__social-text {
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 0 0 0 0.4rem;
+    font-family: $font4;
+    position: relative;
+    width: max-content;
+    transform-origin: left;
+    transition: .1s ease-in-out;
+
+    &:hover {
+      transform: scale(3);
+      color: $color3;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: max-content 1fr 400px;
+
+    @include lg {
+      grid-template-rows: max-content 1fr;
+      grid-template-columns: 5fr 3fr;
+    }
+  }
+
+  &__grid-item {
+    &--first {
+      @include lg {
+        grid-area: 1 / 1 / 2 / 3;
+      }
+    }
+
+    &--second {
+      @include lg {
+        padding: 0 0 0 1rem;
+      }
+
+      @include xl {
+        padding: 0 0 0 2rem;
+      }
+    }
+
+    &--third {
+      @include lg {
+        padding: 0 1rem 0 0;
+      }
+
+      @include xl {
+        padding: 0 2rem 0 0;
+      }
+    }
+  }
+
+  &__grid-form {
+    display: flex;
+    flex-direction: column;
+
+    @include lg {
+      display: grid;
+      row-gap: 1rem;
+      column-gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 4rem 4rem 1fr 3rem;
+    }
+  }
+
+  &__grid-form-item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem 0;
+
+    &:nth-child(5) {
+      @include lg {
+        grid-area: 3 / 1 / 4 / 3;
+      }
+    }
+
+    &:nth-child(6) {
+      @include lg {
+        grid-area: 4 / 1 / 5 / 3;
+      }
+    }
+  }
 }

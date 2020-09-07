@@ -1,33 +1,33 @@
-.home-main {
-  .hero-wrapper {
+.home {
+  &__hero-wrapper {
     width: 100vw;
     height: 100vh;
+  }
 
-    .hero {
-      width: 100%;
+  &__hero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 70% 65%;
+  }
+
+  &__photo-wrapper {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &__photo {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    object-position: 31% 75%;
+
+    @include md {
       height: 100%;
-      object-fit: cover;
-      object-position: 70% 65%;
     }
   }
 
-  .h-photo-wrapper {
-    width: 100vw;
-    height: 100vh;
-
-    .h-photo {
-      width: 100%;
-      height: 90%;
-      object-fit: cover;
-      object-position: 31% 75%;
-
-      @include md {
-        height: 100%;
-      }
-    }
-  }
-
-  .short-about {
+  &__about {
     padding: 1rem 0.8rem;
     background-color: $color1;
     display: flex;
@@ -40,215 +40,199 @@
     @include xxl {
       padding: 3rem 7rem;
     }
+  }
 
-    .sa-content-1 {
+  &__content {
+    color: $color2;
+    width: 90%;
+    padding: 3rem 0;
+
+    @include md {
+      padding: 3rem 0;
+    }
+
+    @include lg {
+      padding: 4rem 0;
+    }
+
+    @include xl {
+      padding: 5.3rem 0;
+      max-width: 60rem;
+    }
+
+    @include xxl {
+      padding: 6.5rem 0;
+      max-width: 64rem;
+    }
+
+    &--first {
       align-self: flex-start;
     }
 
-    .sa-content-2 {
+    &--second {
       align-self: flex-end;
     }
 
-    .sa-content-3 {
+    &--third {
       align-self: flex-start;
     }
+  }
 
-    .sa-content {
-      color: $color2;
-      width: 90%;
-      padding: 3rem 0;
+  &__about-header {
+    margin: 0 0 1rem 0;
+    font-family: $font4;
+    font-weight: 600;
+    font-size: 1.9rem;
+    letter-spacing: 0.05rem;
 
-      @include md {
-        padding: 3rem 0;
-      }
+    @include md {
+      font-size: 2.7rem;
+      margin: 0 0 1rem 1rem;
+    }
 
-      @include lg {
-        padding: 4rem 0;
-      }
+    @include xl {
+      font-size: 3.8rem;
+      margin: 0 0 2rem 0;
+    }
+
+    @include xxl {
+      font-size: 4.5rem;
+      margin: 0 0 2.8rem 0;
+    }
+
+    span {
+      background-color: $color2;
+      color: $color1;
+      padding: 0.1rem 0.35rem;
+    }
+  }
+
+  &__text {
+    font-family: $font1;
+    font-size: 1.15rem;
+    line-height: 1.6rem;
+    padding: 0 0 0 1rem;
+    position: relative;
+    z-index: 1;
+
+    @include md {
+      padding: 0 0 0 2rem;
+      font-size: 1.35rem;
+      line-height: 2rem;
+      letter-spacing: 0.03rem;
+    }
+
+    @include xl {
+      padding: 0 0 0 5rem;
+      font-size: 1.65rem;
+      line-height: 2.4rem;
+      letter-spacing: 0.05rem;
+    }
+
+    @include xxl {
+      padding: 0 0 0 5rem;
+      font-size: 1.8rem;
+      line-height: 2.7rem;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 2.4rem;
+      width: 100%;
+      background-color: $color4;
+      bottom: -0.2rem;
+      left: 0.5rem;
+      z-index: -1;
 
       @include xl {
-        padding: 5.3rem 0;
-        max-width: 60rem;
+        height: 3.7rem;
       }
 
       @include xxl {
-        padding: 6.5rem 0;
-        max-width: 64rem;
-      }
-
-      .sa-header {
-        margin: 0 0 1rem 0;
-        font-family: $font4;
-        font-weight: 600;
-        font-size: 1.9rem;
-        letter-spacing: 0.05rem;
-
-        @include md {
-          font-size: 2.7rem;
-          margin: 0 0 1rem 0;
-        }
-
-        @include xl {
-          font-size: 3.8rem;
-          margin: 0 0 2rem 0;
-        }
-
-        @include xxl {
-          font-size: 4.5rem;
-          margin: 0 0 2.8rem 0;
-        }
-
-        span {
-          background-color: $color2;
-          color: $color1;
-          padding: 0.1rem 0.35rem;
-        }
-      }
-
-      .sa-text {
-        font-family: $font1;
-        font-size: 1.15rem;
-        line-height: 1.6rem;
-        padding: 0 0 0 1rem;
-        position: relative;
-        z-index: 1;
-
-        @include md {
-          padding: 0 0 0 1.5rem;
-          font-size: 1.35rem;
-          line-height: 2rem;
-          letter-spacing: 0.03rem;
-        }
-
-        @include xl {
-          padding: 0 0 0 5rem;
-          font-size: 1.65rem;
-          line-height: 2.4rem;
-          letter-spacing: 0.05rem;
-        }
-
-        @include xxl {
-          padding: 0 0 0 5rem;
-          font-size: 1.8rem;
-          line-height: 2.7rem;
-        }
-
-        &::before {
-          position: absolute;
-          content: "";
-          height: 2.4rem;
-          width: 100%;
-          background-color: $color4;
-          bottom: -0.2rem;
-          left: 0.5rem;
-          z-index: -1;
-
-          @include xl {
-            height: 3.7rem;
-          }
-
-          @include xxl {
-            height: 4.1rem;
-          }
-        }
+        height: 4.1rem;
       }
     }
   }
 
-  .h-nav {
+  &__nav {
     overflow: hidden;
-    // height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 0;
+    padding: 6rem 0 4rem 0;
 
     @include sm-o {
-      padding: 2rem 0;
+      padding: 6rem 0 4rem 0;
     }
 
     @include md-o {
-      padding: 7.5rem 0 4rem 0;
+      padding: 6rem 0 4rem 0;
     }
 
     @include lg {
-      padding: 7.5rem 0 4rem 0;
+      padding: 8rem 0 6rem 0;
     }
 
     @include xl {
-      padding: 10rem 0 4rem 0;
+      padding: 8rem 0 6rem 0;
+    }
+  }
+
+  &__nav-portfolio {
+    display: flex;
+    flex-direction: column;
+    background-color: $color4;
+    padding: 2rem;
+    margin: 0 0 5rem 0;
+
+    @include lg {
+      padding: 3rem;
+    }
+  }
+
+  &__link {
+    font-size: 1.8rem;
+    font-family: $font4;
+    text-decoration: none;
+    color: $color2;
+    padding: 0.5rem 0.9rem;
+    transition: 0.2s color ease-in-out, 0.2s background-color ease-in-out;
+    border: 0.2rem solid $color3;
+    text-align: center;
+
+    @include lg {
+      font-size: 2.7rem;
     }
 
-    &-portfolio {
-      display: flex;
-      flex-direction: column;
-      background-color: $color4;
-      padding: 2rem 1rem;
-      margin: 0 0 10rem 0;
-
-      @include sm-o {
-        padding: 2rem 3rem;
-        margin: 0 0 8rem 0;
-      }
-
-      @include md-o {
-        padding: 3rem 4.5rem;
-        margin: 0 0 12rem 0;
-      }
-
-      @include lg {
-        padding: 4rem 6rem;
-        margin: 0 0 14rem 0;
-      }
-
-      @include xl {
-        padding: 5rem 7.5rem;
-        margin: 0 0 17rem 0;
-      }
-
-      a { 
-        font-size: 1.8rem;
-        font-family: $font4;
-        text-decoration: none;
-        color: $color2;
-        padding: 0.5rem 0.9rem;
-        transition: 0.2s color ease-in-out, 0.2s background-color ease-in-out;
-        border: 0.2rem solid $color3;
-        text-align: center;
-
-        @include lg {
-          font-size: 2.7rem;
-        } 
-
-        @include xl {
-          font-size: 3.3rem;
-        }
-
-        &:hover {
-          background-color: $color3;
-          color: $color1;
-        }
-      }
+    @include xl {
+      font-size: 3.1rem;
     }
 
-    &-scroll {
-      font-style: italic;
-      outline: none;
-      appearance: none;
-      border: none;
-      cursor: pointer;
+    &:hover {
+      background-color: $color3;
       color: $color1;
-      background-color: $color2;
-      padding: 0.5rem;
-      font-size: 1.05rem;
-      letter-spacing: 0.03rem;
-      font-family: $font1;
-      transition: transform ease-in-out .2s;
+    }
+  }
 
-      &:hover {
-        transform: scale(1.1);
-      }
+  
+  &__scroll-top {
+    font-style: italic;
+    outline: none;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    color: $color1;
+    background-color: $color2;
+    padding: 0.5rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.03rem;
+    font-family: $font1;
+    transition: transform ease-in-out 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

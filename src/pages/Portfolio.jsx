@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap, Power1, Power2, ScrollToPlugin } from "gsap/all";
 import { NavLink } from "react-router-dom";
 
@@ -67,15 +67,22 @@ const Portfolio = () => {
     });
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+
+    gsap.from('.portfolio__section', .4, { opacity: 0, x: -20, stagger: 0.1, delay: .2 })
+  }, [])
+
   return (
     <>
       <PageTransition />
-      <main className="portfolio-main">
+      <main className="portfolio">
         {portfolioData.map(
           ({ type, short, title, photos, noPhotos }, index) => (
-            <section key={index} className={`portfolio-section ${type}`}>
-              <header className="ps-header" id={type}>
+            <section key={index} className={`portfolio__section ${type}`}>
+              <header className="portfolio__section-header" id={type}>
                 <button
+                  className="portfolio__button"
                   onClick={() => sectionAnimation(index)}
                   ref={buttons.current[index]}
                 >
@@ -83,24 +90,24 @@ const Portfolio = () => {
                 </button>
               </header>
               <article
-                className="ps-content"
+                className="portfolio__section-content"
                 data-status="inactive"
                 ref={contents.current[index]}
               >
-                <div className="ps-container">
-                  <p className="ps-warning">{noPhotos}</p>
+                <div className="portfolio__container">
+                  <p className="portfolio__warning">{noPhotos}</p>
                   {photos.map(({ id, src, desc, alt }, index) => (
                     <NavLink
                       to={`/portfolio/${short}/${id}`}
-                      className="ps-photo-wrapper"
+                      className="portfolio__photo-wrapper"
                       id={id}
                       key={index}
                     >
-                      <span className="ps-description">{desc}</span>
+                      <span className="portfolio__description">{desc}</span>
                       <img
                         src={require(`../images/${src}`)}
                         alt={alt}
-                        className="ps-photo"
+                        className="portfolio__photo"
                       />
                     </NavLink>
                   ))}

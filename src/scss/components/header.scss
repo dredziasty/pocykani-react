@@ -1,4 +1,4 @@
-.main-header {
+.header {
   max-height: 100vh;
   background-color: transparent;
   z-index: 997;
@@ -8,7 +8,7 @@
   width: 100vw;
   overflow: hidden;
 
-  .burger {
+  &__burger {
     position: absolute;
     top: 0;
     right: 0;
@@ -26,16 +26,16 @@
     @include lg-o {
       display: none;
     }
-
-    .line {
-      width: 28px;
-      height: 2px;
-      background-color: $color2;
-      display: block;
-    }
   }
 
-  .header-wrapper {
+  &__burger-line {
+    width: 28px;
+    height: 2px;
+    background-color: $color2;
+    display: block;
+  }
+
+  &__wrapper {
     height: 117px;
     flex-direction: column;
     display: flex;
@@ -46,103 +46,74 @@
       flex-direction: row;
       height: 117px !important;
     }
+  }
 
-    .logo-wrapper {
-      position: relative;
+  &__logo-wrapper {
+    position: relative;
+  }
 
-      .logo {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 0 !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-width: 200px;
-        padding: 0 0 10px 0;
-        order: -1;
-  
-        @include lg-o {
-          order: 0;
-        }
-  
-        h1 {
-          position: relative;
-          top: 0;
-          font-family: $font1;
-          font-size: 2.45rem;
-          letter-spacing: .35rem;
-          margin: 8px 0 5px 0;
-          transition: .3s ease-in-out letter-spacing;
-          cursor: default;
-  
-          @include lg-o {
-            font-size: 2.2rem;
-          }
-          
-          &:hover {
-            letter-spacing: .15rem;
-          }
-  
-          a {
-            color: $color2;
-            text-decoration: none;
-          }
-        }
-        
-        span {
-          font-family: $font3;
-          font-size: 1.9rem;
-          line-height: 1.4rem;
-        }
-  
-        .text-1 {
-          margin: 0 40px 0 0;
+  &__logo {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    padding: 0 0 10px 0;
+    order: -1;
 
-          .text-red {
-            color: $color3;
-          }
-        }
-  
-        .text-2 {
-          margin: 0 0 0 40px;
-        }
-      }
+    @include lg-o {
+      order: 0;
+    }
+  }
+
+  &__logo-link-wrapper {
+    position: relative;
+    top: 0;
+    font-family: $font1;
+    font-size: 2.45rem;
+    letter-spacing: 0.35rem;
+    margin: 8px 0 5px 0;
+    transition: 0.3s ease-in-out letter-spacing;
+    cursor: default;
+
+    @include lg-o {
+      font-size: 2.2rem;
     }
 
-    .nav {
-      .link {
-        color: $color2;
-        text-decoration: none;
-        text-align: center;
-        position: relative;
-        letter-spacing: .1rem;
-        width: 130px;
-        padding: 20px 0;
-        font-family: $font1;
-        cursor: pointer;
-
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 10px;
-          background-color: $color3;
-          width: 100%;
-          height: 2px;
-          transform: scaleX(0);
-          transition: .3s ease-in-out transform;
-          color: $color2;
-        }
-
-        &:hover::before {
-          transform: scaleX(1);
-        }
-      }
+    &:hover {
+      letter-spacing: 0.15rem;
     }
-    
-    .nav-desktop {
+  }
+
+  &__logo-link {
+    color: $color2;
+    text-decoration: none;
+  }
+
+  &__text {
+    font-family: $font3;
+    font-size: 1.9rem;
+    line-height: 1.4rem;
+
+    &--first {
+      margin: 0 40px 0 0;
+    }
+
+    &--second {
+      margin: 0 0 0 40px;
+    }
+
+    &--red {
+      color: $color3;
+    }
+  }
+
+  &__nav {
+    &--desktop {
       display: none;
 
       @include lg-o {
@@ -154,14 +125,10 @@
         align-items: center;
         flex-direction: row;
         margin: 0;
-
-        .link {
-          font-size: 1.4rem;
-        }
       }
     }
 
-    .nav-mobile {
+    &--mobile {
       height: calc(100vh - 117px);
       display: none;
       grid-template-columns: 1fr;
@@ -184,18 +151,51 @@
       @include lg-o {
         display: none;
       }
+    }
+  }
 
-      .link {
-        height: max-content;
-        font-size: 1.8rem;
-        padding: 0;
-        opacity: 0;
-        transform: translateX(-20px);
+  &__link {
+    color: $color2;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    letter-spacing: 0.1rem;
+    width: 130px;
+    padding: 20px 0;
+    font-family: $font1;
+    cursor: pointer;
 
-        &::before {
-          bottom: -5px;
-        }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      background-color: $color3;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transition: 0.3s ease-in-out transform;
+      color: $color2;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+
+    &--mobile {
+      height: max-content;
+      font-size: 1.8rem;
+      padding: 0;
+      opacity: 0;
+      transform: translateX(-20px);
+
+      &::before {
+        bottom: -5px;
       }
+    }
+
+    &--desktop {
+      font-size: 1.4rem;
     }
   }
 }

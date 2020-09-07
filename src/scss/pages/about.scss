@@ -1,12 +1,12 @@
-.about-main {
-  min-height: max-content;
+.about {
+  min-height: calc(100vh - 245px);
   margin: 120px 0 40px 0;
   display: flex;
   flex-direction: column;
   background-color: $color1;
   color: $color2;
 
-  .about-header {
+  &__header {
     padding: 1.8rem 0 2rem 2rem;
 
     @include lg {
@@ -16,48 +16,47 @@
     @include xxl {
       padding: 1.8rem 0 2rem 8rem;
     }
+  }
 
-    h3 {
-      font-family: $font4;
-      font-weight: 600;
-      font-size: 2.6rem;
+  &__header-text {
+    font-family: $font4;
+    font-weight: 600;
+    font-size: 2.6rem;
 
-      @include lg {
-        font-size: 3.2rem;
-      }
+    @include lg {
+      font-size: 3.2rem;
     }
   }
 
-  .about-content {
-    margin: 0 0 0 10px;
-    border-left: 6px solid $color3;
-    padding: 0 2.5rem 0 3.2rem;
+  &__content {
+    margin: 0 0 0 1rem;
+    border-left: 0.25rem solid $color3;
+    padding: 0 2.5rem 0 2.2rem;
     max-width: 1440px;
     background-color: $color4;
 
     @include lg {
-      padding: 0 2.5rem 0 5.5rem;
+      padding: 0 2.5rem 0 5rem;
     }
 
     @include xxl {
-      padding: 0 2.5rem 0 9.5rem;
-      margin: 0 0 0 40px;
-    }
-
-    .text {
-      margin: 1rem 0 2rem 0;
-      font-family: $font1;
-      line-height: 1.6rem;
-      text-indent: 1rem;
-
-      @include lg {
-        font-size: 1.1rem;
-        line-height: 1.8rem;
-      }
+      margin: 0 0 0 3rem;
     }
   }
 
-  .about-crew-wrapper {
+  &__text {
+    margin: 1rem 0 2rem 0;
+    font-family: $font1;
+    line-height: 1.6rem;
+    text-indent: 1rem;
+
+    @include lg {
+      font-size: 1.1rem;
+      line-height: 1.8rem;
+    }
+  }
+
+  &__crew-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -67,82 +66,10 @@
     @include lg {
       padding: 2rem 0 1.5rem 0;
     }
+  }
 
-    .crew-member {
-      .crew-member-photo-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .crew-member-photo {
-          border-radius: .8rem;
-          width: 90%;
-          // box-shadow: 0 0 7px 1px rgba($color2, 0.3);
-          padding: .6rem;
-          background: $color4;
-
-          @include md {
-            width: 200px;
-          }
-
-          @include lg {
-            width: 230px;
-          }
-        }
-      }
-
-      .crew-member-name-wrapper {
-        margin: 0.5rem 0 0 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .crew-member-name {
-          font-family: $font2;
-          font-size: 1.2rem;
-          padding: 0 0.72rem;
-          letter-spacing: 0.1rem;
-          position: relative;
-          text-align: center;
-          width: max-content;
-
-          @include md {
-            font-size: 1.4rem;
-          }
-
-          @include lg {
-            font-size: 1.6rem;
-          }
-
-          &::before,
-          &::after {
-            content: "";
-            position: absolute;
-            height: 0.4rem;
-            width: 0.4rem;
-            background-color: $color3;
-            border-radius: 50%;
-            top: 50%;
-            transform: translateY(-50%);
-
-            @include md {
-              width: 0.5rem;
-              height: 0.5rem;
-            }
-          }
-
-          &::before {
-            left: 0;
-          }
-
-          &::after {
-            right: 0;
-          }
-        }
-      }
-    }
-
-    .kamil {
+  &__crew-member {
+    &--kamil {
       align-self: flex-start;
       margin: 0 0.75rem 0 0;
 
@@ -155,7 +82,7 @@
       }
     }
 
-    .milosz {
+    &--milosz {
       align-self: flex-end;
       margin: 3rem 0 0 0.75rem;
 
@@ -166,6 +93,52 @@
       @include lg {
         margin: 3rem 0 0 4rem;
       }
+    }
+  }
+
+  &__photo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__photo {
+    width: 90%;
+    padding: 0.6rem;
+    background: $color4;
+
+    @include md {
+      width: 200px;
+    }
+
+    @include lg {
+      width: 230px;
+    }
+  }
+
+  &__name-wrapper {
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__name {
+    font-family: $font4;
+    font-style: italic;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.7rem;
+    position: relative;
+    text-align: center;
+    width: max-content;
+    border-bottom: 1px $color3 solid;
+
+    @include md {
+      font-size: 1.4rem;
+    }
+
+    @include lg {
+      font-size: 1.6rem;
     }
   }
 }
