@@ -10,7 +10,7 @@
     "dotenv": "^8.2.0",
     "framer-motion": "^2.0.1",
     "gsap": "^3.3.4",
-    "node-sass": "^4.14.1",
+    "node-sass": "^9.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-images": "^1.1.7",
@@ -20,7 +20,7 @@
     "react-progressive-image": "^0.6.0",
     "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.1"
   },
   "scripts": {
